@@ -54,17 +54,34 @@ public class HelloEvent extends ListenerAdapter {
                 }
                 if(member == 4){
                     good_price = (int) (price * 0.71);
-                    event.getChannel().sendMessage("거래소 가격 ``"+ (int) price + "``골드 의 ``" + member + "`` 인 파티 입찰 최적가는 ``"+ good_price +"``골드 입니다!").queue();
+                    if(good_price < 50){
+                        event.getChannel().sendMessage("https://i.ytimg.com/vi/mINzmG4Hugc/maxresdefault.jpg").queue();
+                    }
+                    else{
+                        event.getChannel().sendMessage("거래소 가격 ``"+ (int) price + "``골드 의 ``" + member + "`` 인 파티 입찰 최적가는 ``"+ good_price +"``골드 입니다!").queue();
+                    }
                 }
 
                 else if(member == 8){
                     good_price = (int) (price * 0.83);
-                    event.getChannel().sendMessage("거래소 가격 ``"+ (int) price + "``골드 의 ``" + member + "`` 인 파티 입찰 최적가는 ``"+ good_price +"``골드 입니다!").queue();
+                    if(good_price < 50){
+                        event.getChannel().sendMessage("https://i.ytimg.com/vi/mINzmG4Hugc/maxresdefault.jpg").queue();
+                        event.getChannel().sendMessage("입찰 못하는 대신 이 골드를 드리겠습니다.").queue();
+                    }
+                    else {
+                        event.getChannel().sendMessage("거래소 가격 ``" + (int) price + "``골드 의 ``" + member + "`` 인 파티 입찰 최적가는 ``" + good_price + "``골드 입니다!").queue();
+                    }
                 }
 
                 else if(member == 16){
                     good_price = (int) (price * 0.89);
-                    event.getChannel().sendMessage("거래소 가격 ``"+ (int) price + "``골드 의 ``" + member + "`` 인 파티 입찰 최적가는 ``"+ good_price +"``골드 입니다!").queue();
+                    if(good_price < 50){
+                        event.getChannel().sendMessage("https://i.ytimg.com/vi/mINzmG4Hugc/maxresdefault.jpg").queue();
+                        event.getChannel().sendMessage("입찰 못하는 대신 이 골드를 드리겠습니다.").queue();
+                    }
+                    else {
+                        event.getChannel().sendMessage("거래소 가격 ``" + (int) price + "``골드 의 ``" + member + "`` 인 파티 입찰 최적가는 ``" + good_price + "``골드 입니다!").queue();
+                    }
                 }
 
                 else{
@@ -82,7 +99,14 @@ public class HelloEvent extends ListenerAdapter {
             try{
                 price = Float.parseFloat(messageSent[0]);
                 good_price = (int) (price * 0.71);
-                event.getChannel().sendMessage("거래소 가격 ``"+ (int) price + "``골드 의 ``4`` 인 파티 입찰 최적가는 ``"+ good_price +"``골드 입니다!").queue();
+                if(good_price < 50){
+                    event.getChannel().sendMessage("https://i.ytimg.com/vi/mINzmG4Hugc/maxresdefault.jpg").queue();
+                    event.getChannel().sendMessage("입찰 못하는 대신 이 골드를 드리겠습니다.").queue();
+                    throw new Exception();
+                }
+                else {
+                    event.getChannel().sendMessage("거래소 가격 ``" + (int) price + "``골드 의 ``4`` 인 파티 입찰 최적가는 ``" + good_price + "``골드 입니다!").queue();
+                }
                 good_price = (int) (price * 0.83);
                 event.getChannel().sendMessage("거래소 가격 ``"+ (int) price + "``골드 의 ``8`` 인 파티 입찰 최적가는 ``"+ good_price +"``골드 입니다!").queue();
             } catch (Exception e){ }
