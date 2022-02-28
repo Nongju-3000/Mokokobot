@@ -75,5 +75,17 @@ public class HelloEvent extends ListenerAdapter {
                 event.getChannel().sendMessage("뭐라 씨부리노 똑바로 쓰라").queue();
             }
         }
+
+        if(Integer.parseInt(messageSent[0]) > 0 && !event.getMember().getUser().isBot()){
+            float price;
+            int good_price;
+            try{
+                price = Float.parseFloat(messageSent[0]);
+                good_price = (int) (price * 0.71);
+                event.getChannel().sendMessage("거래소 가격 ``"+ (int) price + "``골드 의 ``4`` 인 파티 입찰 최적가는 ``"+ good_price +"``골드 입니다!").queue();
+                good_price = (int) (price * 0.83);
+                event.getChannel().sendMessage("거래소 가격 ``"+ (int) price + "``골드 의 ``8`` 인 파티 입찰 최적가는 ``"+ good_price +"``골드 입니다!").queue();
+            } catch (Exception e){ }
+        }
     }
 }
