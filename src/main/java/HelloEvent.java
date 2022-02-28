@@ -56,6 +56,7 @@ public class HelloEvent extends ListenerAdapter {
                     good_price = (int) (price * 0.71);
                     if(good_price < 50){
                         event.getChannel().sendMessage("https://i.ytimg.com/vi/mINzmG4Hugc/maxresdefault.jpg").queue();
+                        event.getChannel().sendMessage("입찰 못하는 대신 이 골드를 드리겠습니다.").queue();
                     }
                     else{
                         event.getChannel().sendMessage("거래소 가격 ``"+ (int) price + "``골드 의 ``" + member + "`` 인 파티 입찰 최적가는 ``"+ good_price +"``골드 입니다!").queue();
