@@ -28,7 +28,13 @@ public class Island extends ListenerAdapter{
                 }
                 event.getChannel().sendMessage("오늘의 섬은 뭘까용!").queue();
                 for(int i = 0;i<3;i++) {
-                    event.getChannel().sendMessage("``"+island.get(i)+"`` - ``"+reward.get(i)+"``").queue();
+                    String misland;
+                    String mreward;
+                    misland = (String) island.get(i);
+                    mreward = (String) reward.get(i);
+                    misland = misland.replace("-","");
+                    mreward = mreward.replace("-","");
+                    event.getChannel().sendMessage("``"+misland+"`` - ``"+mreward+"``").queue();
                 }
             } catch (Exception e) {
                 event.getChannel().sendMessage("오늘의 모험섬은... 오류섬 입니다!").queue();
@@ -53,8 +59,14 @@ public class Island extends ListenerAdapter{
                     reward.add(element.attr("alt"));
                 }
                 for(int i = 0;i<3;i++) {
-                    if(reward.get(i).equals("골드")){
-                        event.getChannel().sendMessage("오늘의 "+messageSent[0]+"은 ``"+ island.get(i) +"`` 입니다!").queue();
+                    String misland;
+                    String mreward;
+                    misland = (String) island.get(i);
+                    mreward = (String) reward.get(i);
+                    misland = misland.replace("-","");
+                    mreward = mreward.replace("-","");
+                    if(mreward.equals("골드")){
+                        event.getChannel().sendMessage("오늘의 "+messageSent[0]+"은 ``"+ misland +"`` 입니다!").queue();
                         isreal = true;
                     }
                 }
@@ -84,8 +96,14 @@ public class Island extends ListenerAdapter{
                     reward.add(element.attr("alt"));
                 }
                 for(int i = 0;i<3;i++) {
-                    if(reward.get(i).equals("카드")){
-                        event.getChannel().sendMessage("오늘의 "+messageSent[0]+"은 ``"+ island.get(i) +"`` 입니다!").queue();
+                    String misland;
+                    String mreward;
+                    misland = (String) island.get(i);
+                    mreward = (String) reward.get(i);
+                    misland = misland.replace("-","");
+                    mreward = mreward.replace("-","");
+                    if(mreward.equals("카드")){
+                        event.getChannel().sendMessage("오늘의 "+messageSent[0]+"은 ``"+ misland +"`` 입니다!").queue();
                         isreal = true;
                     }
                 }
@@ -115,8 +133,14 @@ public class Island extends ListenerAdapter{
                     reward.add(element.attr("alt"));
                 }
                 for(int i = 0;i<3;i++) {
-                    if(reward.get(i).equals("주화")){
-                        event.getChannel().sendMessage("오늘의 "+messageSent[0]+"은 ``"+ island.get(i) +"`` 입니다!").queue();
+                    String misland;
+                    String mreward;
+                    misland = (String) island.get(i);
+                    mreward = (String) reward.get(i);
+                    misland = misland.replace("-","");
+                    mreward = mreward.replace("-","");
+                    if(mreward.equals("주화")){
+                        event.getChannel().sendMessage("오늘의 "+messageSent[0]+"은 ``"+ misland +"`` 입니다!").queue();
                         isreal = true;
                     }
                 }
@@ -146,8 +170,14 @@ public class Island extends ListenerAdapter{
                     reward.add(element.attr("alt"));
                 }
                 for(int i = 0;i<3;i++) {
-                    if(reward.get(i).equals("실링")){
-                        event.getChannel().sendMessage("오늘의 "+messageSent[0]+"은 ``"+ island.get(i) +"`` 입니다!").queue();
+                    String misland;
+                    String mreward;
+                    misland = (String) island.get(i);
+                    mreward = (String) reward.get(i);
+                    misland = misland.replace("-","");
+                    mreward = mreward.replace("-","");
+                    if(mreward.equals("실링")){
+                        event.getChannel().sendMessage("오늘의 "+messageSent[0]+"은 ``"+ misland +"`` 입니다!").queue();
                         isreal = true;
                     }
                 }
