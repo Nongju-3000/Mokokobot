@@ -21,6 +21,7 @@ public class MainActivity {
         }
         JDA api = JDABuilder.createDefault(token).build();
         api.setAutoReconnect(true);
+        api.addEventListener(new Logwrite());
         api.addEventListener(new HelloEvent());
         api.addEventListener(new Sasage());
         api.addEventListener(new Island());
